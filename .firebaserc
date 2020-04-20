@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "library-management-c3405": {
+      "hosting": {
+        "Library-Management": [
+          "library-management-c3405"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<form [formGroup]="signUpForm" method="POST" (ngSubmit)="signUp()">
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Email" autocomplete="email" required email />
+        <mat-error *ngIf="signUpForm.hasError('required', 'email')">
+            Adres email jest wymagany.
+        </mat-error>
+        <mat-error *ngIf="signUpForm.hasError('email', 'email')">
+            Adres email jest niepoprawny.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Password" autocomplete="new-password"
+            required />
+        <mat-error *ngIf="signUpForm.hasError('required', 'password')">
+            Hasło jest wymagane.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Confirm password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+            autocomplete="new-password" />
+        <mat-error *ngIf="signUpForm.controls.confirmPassword.hasError('mustMatch')">
+            Hasła nie są takie same.
+        </mat-error>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="primary" [disabled]=signUpForm.invalid type="submit">Sign up</button>
+</form>
