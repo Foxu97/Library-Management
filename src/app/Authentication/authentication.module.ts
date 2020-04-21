@@ -4,13 +4,17 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { SharedModule } from '../Shared/shared.module';
-import { ROUTES } from '../Shared/Model/Routing.enum'
+import { ROUTES } from '../Shared/Models/Routing.enum'
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+
+
 @NgModule({
     declarations: [
         SignInComponent,
@@ -27,6 +31,8 @@ import {MatDividerModule} from '@angular/material/divider';
         MatInputModule,
         MatButtonModule,
         MatDividerModule,
+        MatChipsModule,
+        MatCardModule,
         FormsModule,
         ReactiveFormsModule,
         SharedModule

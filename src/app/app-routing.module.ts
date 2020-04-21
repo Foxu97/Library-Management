@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ROUTES } from './Shared/Model/Routing.enum';
+import { ROUTES } from './Shared/Models/Routing.enum';
 
 const routes: Routes = [
   {

@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MustMatch } from './must-match.validator';
 import { AuthenticationService } from '../authentication.service'
+import { authData } from 'src/app/Shared/Models/authData';
 
 
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  styleUrls: ['./sign-up.component.scss', '../auth-form.scss']
 })
 export class SignUpComponent implements OnInit {
   public signUpForm: FormGroup;
@@ -30,11 +31,13 @@ export class SignUpComponent implements OnInit {
 
   public signUp() {
     if (this.signUpForm.valid) {
-      const authData = {
+      const authData: authData = {
         email: this.signUpForm.controls['email'].value,
         password: this.signUpForm.controls['password'].value
-      } //napisac model
-      this.authService.signUp(authData)
+      }
+      this.authService.signUp(authData).subscribe(res => {
+        console.log(res)
+      })
     }
   }
 

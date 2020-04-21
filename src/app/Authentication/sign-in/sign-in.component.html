@@ -1,1 +1,38 @@
-<p>sign-in works!</p>
+<mat-card layout-fill>
+    <mat-card-title>
+        Sign In
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="signInForm" method="POST">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="Email" autocomplete="email" required
+                    email />
+                <mat-error *ngIf="signInForm.hasError('required', 'email')">
+                    Adres email jest wymagany.
+                </mat-error>
+                <mat-error *ngIf="signInForm.hasError('email', 'email')">
+                    Adres email jest niepoprawny.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" placeholder="Password"
+                    autocomplete="new-password" required />
+                <mat-error *ngIf="signInForm.hasError('required', 'password')">
+                    Hasło jest wymagane.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-chip-list>
+                <mat-chip color="primary" routerLink="../signup">Create account</mat-chip>
+            </mat-chip-list>
+
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]=signInForm.invalid type="button" (click)="signIn()">Sign
+            in</button>
+    </mat-card-actions>
+</mat-card>
