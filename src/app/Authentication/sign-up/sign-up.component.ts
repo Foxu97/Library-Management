@@ -19,13 +19,16 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.initSignUpForm();
+    this.signUpForm.valueChanges.subscribe(_ => {
+      console.log(this.signUpForm)
+    })
   }
 
   private initSignUpForm(): void {
     this.signUpForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required],
-      confirmPassword: [null, Validators.required]
+      password: [null, [Validators.required, Validators.minLength(6)]],
+      confirmPassword: [null, [Validators.required, Validators.minLength(6)]]
     }, { validator: MustMatch('password', 'confirmPassword') });
   }
 

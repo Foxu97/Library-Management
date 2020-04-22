@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
         AngularFireAuthModule,
         RouterModule.forChild([
             { path: ROUTES.SIGN_IN, component: SignInComponent },
-            { path: ROUTES.SIGN_UP, component: SignUpComponent }
+            { path: ROUTES.SIGN_UP, component: SignUpComponent },
+            { path: '**', redirectTo: ROUTES.SIGN_IN }
 
         ]),
         MatFormFieldModule,
@@ -33,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
         MatDividerModule,
         MatChipsModule,
         MatCardModule,
+        MatProgressSpinnerModule,
         FormsModule,
         ReactiveFormsModule,
         SharedModule

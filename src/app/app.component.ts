@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import {MatToolbarModule} from '@angular/material/toolbar';
+
+import { AuthenticationService } from './Authentication/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 export class AppComponent implements OnInit {
   items$: Observable<any[]>
-  constructor(private firestore: AngularFirestore) {
+  constructor(
+    private firestore: AngularFirestore,
+    private authService: AuthenticationService
+    ) {
 
   }
   ngOnInit() {
+    this.authService.initAuthListener();
     this.items$ = this.firestore.collection('availableExercises').valueChanges();
   }
   title = 'Library-Management';

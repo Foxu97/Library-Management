@@ -23,6 +23,9 @@
                 <mat-error *ngIf="signInForm.hasError('required', 'password')">
                     Hasło jest wymagane.
                 </mat-error>
+                <mat-error *ngIf="signInForm.controls.password.hasError('minlength')">
+                    Hasło musi zawierać co najmniej 6 znaków.
+                </mat-error>
             </mat-form-field>
 
             <mat-chip-list>

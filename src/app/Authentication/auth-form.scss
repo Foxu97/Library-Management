@@ -1,7 +1,5 @@
-:host {
-    flex: 1;
-}
 mat-card {
+    box-shadow: none !important;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -9,14 +7,23 @@ mat-card {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     height: calc(100vh - 56px);
+    @media (max-width: 599px) {
+        height: calc(100vh - 56px);
+    }
     box-sizing: border-box;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        mat-form-field {
+            margin-bottom: 1rem
+        }
+    }
 }
-mat-card form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 mat-card-actions{
     width: 100vw;
     position: relative;

@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service'
 import { authData } from '../../Shared/Models/authData';
+
 @Component({
   selector: 'sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss', '../auth-form.scss']
 })
 export class SignInComponent implements OnInit {
-  public signInForm: FormGroup
+  public signInForm: FormGroup;
+
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +25,7 @@ export class SignInComponent implements OnInit {
   private initSignInForm(): void {
     this.signInForm = this.fb.group({
       email: [null, [Validators.required]],
-      password: [null, [Validators.required]]
+      password: [null, [Validators.required, Validators.minLength(6)]]
     });
   }
 

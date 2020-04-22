@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import  {SharedModule } from './Shared/shared.module'
+import { StoreModule } from '@ngrx/store';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,23 +15,28 @@ import { AuthenticationModule } from './Authentication/authentication.module'
 import { MaterialModule } from './material.module';
 
 import { HeaderComponent } from './Shared/UI/header/header.component';
+import { LoaderComponent } from './Shared/UI/loader/loader.component';
+import { reducers } from './app.reducer';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    //CommonModule,
-    // AuthenticationModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    MaterialModule,
     AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    MaterialModule
+    StoreModule.forRoot(reducers),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
