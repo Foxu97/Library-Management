@@ -14,8 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import {TranslateModule} from '@ngx-translate/core';
 @NgModule({
     declarations: [
         SignInComponent,
@@ -36,8 +36,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         MatChipsModule,
         MatCardModule,
         MatProgressSpinnerModule,
+        MatIconModule,
         FormsModule,
         ReactiveFormsModule,
+        TranslateModule,
         SharedModule
     ]
 

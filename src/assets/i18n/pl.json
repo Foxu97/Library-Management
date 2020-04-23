@@ -1,0 +1,27 @@
+{
+    "app-name": "Library Manager",
+    "common": {
+        "sign-in": "Zaloguj",
+        "sign-up": "Zarejestruj",
+        "email": "Email",
+        "password": "Hasło",
+        "confirm-password": "Potwierdź hasło",
+        "create-account": "Stwórz konto",
+        "i-have-account": "Mam już konto"
+    },
+    "errors": {
+        "error": "Błąd",
+        "email-required": "Email jest wymagany",
+        "email-invalid": "Email jest niepoprawny",
+        "password-required": "Hasło jest wymagane",
+        "password-min-length": "Hasło musi zawierać co najmniej 6 znaków",
+        "passwords-dont-match": "Hasła nie są takie same",
+        "auth": {
+            "user-not-found": "Nie znaleziono użytkownika",
+            "too-many-requests": "Za dużo prób",
+            "wrong-password": "Niewłaściwe hasło",
+            "email-already-in-use": "Ten email jest już zajęty"
+        }
+
+    }
+}

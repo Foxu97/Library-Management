@@ -1,3 +1,11 @@
 mat-toolbar {
     justify-content: space-between;
+    .select-language-form {
+        width: 48px;
+    }
+}
+.header-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

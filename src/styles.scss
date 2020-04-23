@@ -1,5 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+@import '~ngx-toastr/toastr';
 @import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
@@ -12,26 +13,26 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $LM-primary: (
-  50: #e8f0f8,
-  100: #c5daee,
-  200: #9ec2e3,
-  300: #77aad7,
-  400: #5a97cf,
-  500: #3d85c6,
-  600: #377dc0,
-  700: #2f72b9,
-  800: #2768b1,
-  900: #1a55a4,
-  A100: #dae9ff,
-  A200: #a7caff,
-  A400: #74abff,
-  A700: #5b9cff,
+  50: #e3effa,
+  100: #bad6f2,
+  200: #8cbbe9,
+  300: #5e9fe0,
+  400: #3c8bd9,
+  500: #1976d2,
+  600: #166ecd,
+  700: #1263c7,
+  800: #0e59c1,
+  900: #0846b6,
+  A100: #e0eaff,
+  A200: #adc6ff,
+  A400: #7aa3ff,
+  A700: #6191ff,
   contrast: (
     50: #000000,
     100: #000000,
     200: #000000,
     300: #000000,
-    400: #000000,
+    400: #ffffff,
     500: #ffffff,
     600: #ffffff,
     700: #ffffff,

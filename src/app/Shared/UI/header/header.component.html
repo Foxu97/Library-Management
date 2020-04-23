@@ -1,11 +1,17 @@
 <mat-toolbar color="primary">
     <span>Library Manager</span>
-    <button  *ngIf="isAuth$ | async"
-    mat-icon-button 
-    aria-label="Logout"
-    (click)="logout()"
-    >
-        <mat-icon>power_settings_new
-        </mat-icon>
-    </button>
+    <div class="header-actions">
+        <mat-form-field class="select-language-form">
+            <mat-label>{{selectedLanguage}}</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let languageOption of languageOptions" (click)="selectLanguage(languageOption)">
+                    {{languageOption}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button *ngIf="isAuth$ | async" mat-icon-button aria-label="Logout" (click)="logout()">
+            <mat-icon>power_settings_new
+            </mat-icon>
+        </button>
+    </div>
 </mat-toolbar>

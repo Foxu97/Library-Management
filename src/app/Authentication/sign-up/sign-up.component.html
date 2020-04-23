@@ -1,52 +1,54 @@
 <mat-card layout-fill>
     <mat-card-title>
-        Sign Up
+        {{'common.sign-up' | translate}}
     </mat-card-title>
     <mat-card-content>
         <form [formGroup]="signUpForm" method="POST">
             <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="email" placeholder="Email" autocomplete="email" required
-                    email />
+                <mat-label>{{'common.email' | translate}}</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="{{'common.email' | translate}}"
+                    autocomplete="email" required email />
                 <mat-error *ngIf="signUpForm.hasError('required', 'email')">
-                    Adres email jest wymagany.
+                    {{'errors.email-required' | translate}}
                 </mat-error>
                 <mat-error *ngIf="signUpForm.hasError('email', 'email')">
-                    Adres email jest niepoprawny.
+                    {{'errors.email-invalid' | translate}}
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password" placeholder="Password"
-                    autocomplete="new-password" required />
+                <mat-label>{{'common.password' | translate}}</mat-label>
+                <input matInput type="password" formControlName="password"
+                    placeholder="{{'common.password' | translate}}" autocomplete="new-password" required />
                 <mat-error *ngIf="signUpForm.hasError('required', 'password')">
-                    Hasło jest wymagane.
+                    {{'errors.password-required' | translate}}
                 </mat-error>
                 <mat-error *ngIf="signUpForm.controls.password.hasError('minlength')">
-                    Hasło musi zawierać co najmniej 6 znaków.
+                    {{'errors.password-min-length' | translate}}
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Confirm password</mat-label>
-                <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm Password"
-                    autocomplete="new-password" required />
+                <mat-label>{{'common.confirm-password' | translate}}</mat-label>
+                <input matInput type="password" formControlName="confirmPassword"
+                    placeholder="{{'common.confirm-password' | translate}}" autocomplete="new-password" required />
                 <mat-error *ngIf="signUpForm.controls.confirmPassword.hasError('mustMatch')">
-                    Hasła nie są takie same.
+                    {{'errors.passwords-dont-match' | translate}}
                 </mat-error>
                 <mat-error *ngIf="signUpForm.controls.confirmPassword.hasError('minlength')">
-                    Hasło musi zawierać co najmniej 6 znaków.
+                    {{'errors.password-min-length' | translate}}
                 </mat-error>
             </mat-form-field>
             <mat-chip-list>
-                <mat-chip color="primary" routerLink="../signin">I have account</mat-chip>
+                <mat-chip color="primary" routerLink="../signin">{{'common.i-have-account' | translate}}</mat-chip>
             </mat-chip-list>
+
+
 
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button color="primary" [disabled]=signUpForm.invalid type="button" (click)="signUp()">Sign
-            up</button>
+        <button mat-raised-button color="primary" [disabled]=signUpForm.invalid type="button"
+            (click)="signUp()">{{'common.sign-up' | translate}}</button>
     </mat-card-actions>
 </mat-card>

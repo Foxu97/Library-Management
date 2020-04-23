@@ -19,9 +19,6 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.initSignUpForm();
-    this.signUpForm.valueChanges.subscribe(_ => {
-      console.log(this.signUpForm)
-    })
   }
 
   private initSignUpForm(): void {
