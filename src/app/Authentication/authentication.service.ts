@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from '@angular/router';
 import { from, Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { authData } from '../Shared/Models/authData';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../app.reducer';
@@ -75,5 +75,10 @@ export class AuthenticationService {
   }
   public signOut() {
     this.authAf.signOut();
+  }
+  public getUserID(): Observable<string> {
+    return this.authAf.authState.pipe(
+      map(user => user.uid)
+    )
   }
 }

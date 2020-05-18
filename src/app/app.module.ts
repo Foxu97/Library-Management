@@ -22,14 +22,15 @@ import { HeaderComponent } from './Shared/UI/header/header.component';
 import { LoaderComponent } from './Shared/UI/loader/loader.component';
 import { reducers } from './app.reducer';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { AssetsTabsComponent } from './dashboard/assets-tabs/assets-tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    AssetsTabsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     StoreModule.forRoot(reducers),
     SharedModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,6 @@
+<mat-tab-group>
+    <mat-tab label={{type.key}} *ngFor="let type of assetsMap | keyvalue; let i = index "> 
+      <p *ngFor="let asset of type.value">{{asset.title}}</p>
+    </mat-tab>
+
+  </mat-tab-group>
