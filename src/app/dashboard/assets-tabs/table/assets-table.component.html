@@ -1,0 +1,18 @@
+<main>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+  </mat-form-field>
+  <p *ngIf="(assets[0] | json) == '{}'">brak </p>
+  <table *ngIf="(assets[0] | json) != '{}'" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container *ngFor="let object of assets[0] | keyvalue;" matColumnDef={{object.key}}>
+      <!--let object of assets[0] tyle kolumn ile propertisow w obiekcie-->
+      <th mat-header-cell *matHeaderCellDef> {{object.key}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[object.key]}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</main>

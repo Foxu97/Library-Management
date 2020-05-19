@@ -23,6 +23,7 @@ import { LoaderComponent } from './Shared/UI/loader/loader.component';
 import { reducers } from './app.reducer';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AssetsTabsComponent } from './dashboard/assets-tabs/assets-tabs.component';
+import { AssetsTableComponent } from './dashboard/assets-tabs/table/assets-table.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AssetsTabsComponent } from './dashboard/assets-tabs/assets-tabs.compone
     HeaderComponent,
     LoaderComponent,
     DashboardComponent,
-    AssetsTabsComponent
+    AssetsTabsComponent,
+    AssetsTableComponent
   ],
   imports: [
     BrowserModule,

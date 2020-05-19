@@ -1,0 +1,10 @@
+main {
+    display: flex;
+    min-height: calc(100vh - 106px); // media qqueries jebnac hot fix chwilowo
+    flex-direction: column;
+    align-items: center;
+}
+
+table, mat-form-field {
+    width: 90%;
+}
