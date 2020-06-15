@@ -1,5 +1,18 @@
 {
     "app-name": "Library Manager",
+    "books": "Książki",
+    "games": "Gry",
+    "movies": "Filmy",
+    "series": "Seriale",
+    "filter": "Szukaj",
+    "no-assets": "Brak zasobów",
+    "author": "Autor",
+    "premiere": "Rok premiery",
+    "title": "Tytuł",
+    "developer": "Deweloper",
+    "director": "Reżyser",
+    "seasons": "Sezonów",
+    "actions": "Akcje",
     "common": {
         "sign-in": "Zaloguj",
         "sign-up": "Zarejestruj",
@@ -7,7 +20,11 @@
         "password": "Hasło",
         "confirm-password": "Potwierdź hasło",
         "create-account": "Stwórz konto",
-        "i-have-account": "Mam już konto"
+        "i-have-account": "Mam już konto",
+        "cancel": "Anuluj",
+        "save": "Zapisz",
+        "add": "Dodaj",
+        "delete": "Usuń"
     },
     "errors": {
         "error": "Błąd",
@@ -22,6 +39,11 @@
             "wrong-password": "Niewłaściwe hasło",
             "email-already-in-use": "Ten email jest już zajęty"
         }
-
+    },
+    "assets": {
+        "edit-asset": "Edytuj zasób",
+        "add-asset": "Dodaj zasób",
+        "delete-asset": "Usuń zasób",
+        "delete-asset-message": "Czy na pewno chcesz usunąć ten zasób?"
     }
 }

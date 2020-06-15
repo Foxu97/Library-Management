@@ -1,0 +1,19 @@
+<h2 *ngIf="this.data.action === 'add'" mat-dialog-title>{{ 'assets.add-asset' | translate}}</h2>
+<h2 *ngIf="this.data.action === 'edit'" mat-dialog-title>{{ 'assets.edit-asset' | translate}}</h2>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="newAssetForm">
+    <!-- <ng-template > -->
+    <mat-form-field *ngFor="let formcontrol of newAssetForm.controls | keyvalue" appearance="outline">
+      <mat-label>{{ translate.instant(formcontrol.key) }}</mat-label>
+      <input matInput formControlName={{formcontrol.key}}>
+    </mat-form-field>
+    <!-- </ng-template> -->
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>{{ 'common.cancel' | translate }}</button>
+  <button *ngIf="this.data.action === 'add'" mat-raised-button color="primary" [disabled]="newAssetForm.invalid" [mat-dialog-close]="true" (click)="addAsset()">{{ 'common.add' | translate }}</button>
+  <button *ngIf="this.data.action === 'edit'" mat-raised-button color="primary" [disabled]="newAssetForm.invalid" [mat-dialog-close]="true" (click)="editAsset()">{{ 'common.save' | translate }}</button>
+</mat-dialog-actions>

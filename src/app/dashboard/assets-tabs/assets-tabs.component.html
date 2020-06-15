@@ -1,5 +1,5 @@
-<mat-tab-group>
-  <mat-tab label={{type.key}} *ngFor="let type of assetsMap | keyvalue; let i = index ">
-    <assets-table [assets]="type.value"></assets-table>
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label={{translate.instant(type.key)}} *ngFor="let type of assetsMap | keyvalue; let i = index ">
+    <assets-table [assets]="type.value" [assetType]="type.key"></assets-table>
   </mat-tab>
 </mat-tab-group>

@@ -6,6 +6,10 @@ import { MatTableModule } from '@angular/material/table';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -15,7 +19,11 @@ import { MatInputModule } from '@angular/material/input';
     MatTabsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSortModule
   ],
   exports: [
     MatProgressSpinnerModule,
@@ -23,7 +31,11 @@ import { MatInputModule } from '@angular/material/input';
     CommonModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSortModule
   ],
   declarations: [
 

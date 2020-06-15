@@ -24,6 +24,8 @@ import { reducers } from './app.reducer';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AssetsTabsComponent } from './dashboard/assets-tabs/assets-tabs.component';
 import { AssetsTableComponent } from './dashboard/assets-tabs/table/assets-table.component';
+import { AddAssetDialogComponent } from './dashboard/assets-tabs/table/add-asset-dialog/add-asset-dialog.component';
+import { DeleteAssetDialogComponent } from './dashboard/assets-tabs/table/delete-asset-dialog/delete-asset-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AssetsTableComponent } from './dashboard/assets-tabs/table/assets-table
     LoaderComponent,
     DashboardComponent,
     AssetsTabsComponent,
-    AssetsTableComponent
+    AssetsTableComponent,
+    AddAssetDialogComponent,
+    DeleteAssetDialogComponent
   ],
   imports: [
     BrowserModule,
